@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NarhenService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Lotizador.WCF" />
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Lotizador.BE" />
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd5" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INarhen_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarSocio_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarSocio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarSocio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarSocioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarSocio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSocio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarSocio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSocioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarSocio_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSocio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarSocio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSocioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerSocioPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSocioPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerSocioPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSocioPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerTipoDocumentoPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoDocumentoPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerTipoDocumentoPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoDocumentoPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerVariablePorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerVariablePorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerVariablePorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerVariablePorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetDepartamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetDepartamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetProvincias_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvincias" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetProvincias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvinciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetDistritos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistritos" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetDistritos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistritosResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetUbigeo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUbigeo" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetUbigeo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUbigeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetUbigeoPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUbigeoPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_GetUbigeoPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUbigeoPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarMoneda_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarMoneda" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarMoneda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarMonedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarMoneda_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMoneda" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarMoneda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMonedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarMoneda_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMoneda" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarMoneda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMonedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerMonedaPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMonedaPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerMonedaPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMonedaPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarProyecto_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarProyecto" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarProyecto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarProyectoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarProyecto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarProyecto" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarProyecto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarProyectoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarProyecto_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarProyecto" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarProyecto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarProyectoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerProyectoPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProyectoPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerProyectoPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProyectoPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarUnidadCatastral_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarUnidadCatastral" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarUnidadCatastral_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarUnidadCatastralResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarUnidadCatastral_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUnidadCatastral" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarUnidadCatastral_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUnidadCatastralResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarUnidadCatastral_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUnidadCatastral" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarUnidadCatastral_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUnidadCatastralResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerUnidadCatastralPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUnidadCatastralPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerUnidadCatastralPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUnidadCatastralPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarLote_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarLote" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarLote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarLoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarLote_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarLote" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarLote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarLoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarLote_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarLote" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarLote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarLoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerLotePorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerLotePorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerLotePorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerLotePorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerLotesDisponibles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerLotesDisponibles" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerLotesDisponibles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerLotesDisponiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarSecuencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarSecuencia" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarSecuencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarSecuenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarSecuencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSecuencia" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarSecuencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSecuenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarSecuencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSecuencia" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarSecuencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSecuenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerSecuenciaPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSecuenciaPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerSecuenciaPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSecuenciaPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarPassword" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerUsuarioPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerUsuarioPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerUsuarioPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorId" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerUsuarioPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarBanco_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarBanco" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarBanco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarBancoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarBanco_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarBanco" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarBanco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarBancoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarBanco_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarBanco" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarBanco_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarBancoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerBancoPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBancoPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerBancoPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBancoPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarContrato" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarContrato" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarContrato" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerContratoPorCriterio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerContratoPorCriterio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerContratoPorCriterio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerContratoPorCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerContrato" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarMonedaTipoCambio_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarMonedaTipoCambio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarMonedaTipoCambio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarMonedaTipoCambioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarMonedaTipoCambio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMonedaTipoCambio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarMonedaTipoCambio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMonedaTipoCambioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarMonedaTipoCambio_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMonedaTipoCambio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_EliminarMonedaTipoCambio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMonedaTipoCambioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerMonedaTipoCambio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMonedaTipoCambio" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ObtenerMonedaTipoCambio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMonedaTipoCambioResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_CommandText_InputMessage">
+    <wsdl:part name="parameters" element="tns:CommandText" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_CommandText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommandTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ExecuteSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ExecuteSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarListaError_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarListaError" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_InsertarListaError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarListaErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarListaError_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarListaError" />
+  </wsdl:message>
+  <wsdl:message name="INarhen_ActualizarListaError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarListaErrorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INarhen">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/GetData" message="tns:INarhen_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/GetDataResponse" message="tns:INarhen_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/GetDataUsingDataContract" message="tns:INarhen_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/GetDataUsingDataContractResponse" message="tns:INarhen_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSocio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarSocio" message="tns:INarhen_InsertarSocio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarSocioResponse" message="tns:INarhen_InsertarSocio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSocio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarSocio" message="tns:INarhen_ActualizarSocio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarSocioResponse" message="tns:INarhen_ActualizarSocio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSocio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarSocio" message="tns:INarhen_EliminarSocio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarSocioResponse" message="tns:INarhen_EliminarSocio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSocioPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerSocioPorCriterio" message="tns:INarhen_ObtenerSocioPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerSocioPorCriterioResponse" message="tns:INarhen_ObtenerSocioPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoDocumentoPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerTipoDocumentoPorCriterio" message="tns:INarhen_ObtenerTipoDocumentoPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerTipoDocumentoPorCriterioResponse" message="tns:INarhen_ObtenerTipoDocumentoPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVariablePorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerVariablePorCriterio" message="tns:INarhen_ObtenerVariablePorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerVariablePorCriterioResponse" message="tns:INarhen_ObtenerVariablePorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/GetDepartamentos" message="tns:INarhen_GetDepartamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/GetDepartamentosResponse" message="tns:INarhen_GetDepartamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvincias">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/GetProvincias" message="tns:INarhen_GetProvincias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/GetProvinciasResponse" message="tns:INarhen_GetProvincias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistritos">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/GetDistritos" message="tns:INarhen_GetDistritos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/GetDistritosResponse" message="tns:INarhen_GetDistritos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUbigeo">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/GetUbigeo" message="tns:INarhen_GetUbigeo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/GetUbigeoResponse" message="tns:INarhen_GetUbigeo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUbigeoPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/GetUbigeoPorCriterio" message="tns:INarhen_GetUbigeoPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/GetUbigeoPorCriterioResponse" message="tns:INarhen_GetUbigeoPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMoneda">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarMoneda" message="tns:INarhen_InsertarMoneda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarMonedaResponse" message="tns:INarhen_InsertarMoneda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMoneda">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarMoneda" message="tns:INarhen_ActualizarMoneda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarMonedaResponse" message="tns:INarhen_ActualizarMoneda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMoneda">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarMoneda" message="tns:INarhen_EliminarMoneda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarMonedaResponse" message="tns:INarhen_EliminarMoneda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMonedaPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerMonedaPorCriterio" message="tns:INarhen_ObtenerMonedaPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerMonedaPorCriterioResponse" message="tns:INarhen_ObtenerMonedaPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarProyecto">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarProyecto" message="tns:INarhen_InsertarProyecto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarProyectoResponse" message="tns:INarhen_InsertarProyecto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProyecto">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarProyecto" message="tns:INarhen_ActualizarProyecto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarProyectoResponse" message="tns:INarhen_ActualizarProyecto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProyecto">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarProyecto" message="tns:INarhen_EliminarProyecto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarProyectoResponse" message="tns:INarhen_EliminarProyecto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProyectoPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerProyectoPorCriterio" message="tns:INarhen_ObtenerProyectoPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerProyectoPorCriterioResponse" message="tns:INarhen_ObtenerProyectoPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarUnidadCatastral">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarUnidadCatastral" message="tns:INarhen_InsertarUnidadCatastral_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarUnidadCatastralResponse" message="tns:INarhen_InsertarUnidadCatastral_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUnidadCatastral">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarUnidadCatastral" message="tns:INarhen_ActualizarUnidadCatastral_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarUnidadCatastralResponse" message="tns:INarhen_ActualizarUnidadCatastral_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUnidadCatastral">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarUnidadCatastral" message="tns:INarhen_EliminarUnidadCatastral_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarUnidadCatastralResponse" message="tns:INarhen_EliminarUnidadCatastral_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUnidadCatastralPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerUnidadCatastralPorCriterio" message="tns:INarhen_ObtenerUnidadCatastralPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerUnidadCatastralPorCriterioResponse" message="tns:INarhen_ObtenerUnidadCatastralPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarLote">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarLote" message="tns:INarhen_InsertarLote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarLoteResponse" message="tns:INarhen_InsertarLote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarLote">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarLote" message="tns:INarhen_ActualizarLote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarLoteResponse" message="tns:INarhen_ActualizarLote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarLote">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarLote" message="tns:INarhen_EliminarLote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarLoteResponse" message="tns:INarhen_EliminarLote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerLotePorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerLotePorCriterio" message="tns:INarhen_ObtenerLotePorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerLotePorCriterioResponse" message="tns:INarhen_ObtenerLotePorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerLotesDisponibles">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerLotesDisponibles" message="tns:INarhen_ObtenerLotesDisponibles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerLotesDisponiblesResponse" message="tns:INarhen_ObtenerLotesDisponibles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSecuencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarSecuencia" message="tns:INarhen_InsertarSecuencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarSecuenciaResponse" message="tns:INarhen_InsertarSecuencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSecuencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarSecuencia" message="tns:INarhen_ActualizarSecuencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarSecuenciaResponse" message="tns:INarhen_ActualizarSecuencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSecuencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarSecuencia" message="tns:INarhen_EliminarSecuencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarSecuenciaResponse" message="tns:INarhen_EliminarSecuencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSecuenciaPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerSecuenciaPorCriterio" message="tns:INarhen_ObtenerSecuenciaPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerSecuenciaPorCriterioResponse" message="tns:INarhen_ObtenerSecuenciaPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarUsuario" message="tns:INarhen_InsertarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarUsuarioResponse" message="tns:INarhen_InsertarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarUsuario" message="tns:INarhen_ActualizarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarUsuarioResponse" message="tns:INarhen_ActualizarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarPassword" message="tns:INarhen_ActualizarPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarPasswordResponse" message="tns:INarhen_ActualizarPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarUsuario" message="tns:INarhen_EliminarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarUsuarioResponse" message="tns:INarhen_EliminarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerUsuarioPorCriterio" message="tns:INarhen_ObtenerUsuarioPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerUsuarioPorCriterioResponse" message="tns:INarhen_ObtenerUsuarioPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerUsuarioPorId" message="tns:INarhen_ObtenerUsuarioPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerUsuarioPorIdResponse" message="tns:INarhen_ObtenerUsuarioPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarBanco">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarBanco" message="tns:INarhen_InsertarBanco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarBancoResponse" message="tns:INarhen_InsertarBanco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarBanco">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarBanco" message="tns:INarhen_ActualizarBanco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarBancoResponse" message="tns:INarhen_ActualizarBanco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarBanco">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarBanco" message="tns:INarhen_EliminarBanco_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarBancoResponse" message="tns:INarhen_EliminarBanco_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBancoPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerBancoPorCriterio" message="tns:INarhen_ObtenerBancoPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerBancoPorCriterioResponse" message="tns:INarhen_ObtenerBancoPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarContrato" message="tns:INarhen_InsertarContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarContratoResponse" message="tns:INarhen_InsertarContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarContrato" message="tns:INarhen_ActualizarContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarContratoResponse" message="tns:INarhen_ActualizarContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarContrato" message="tns:INarhen_EliminarContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarContratoResponse" message="tns:INarhen_EliminarContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerContratoPorCriterio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerContratoPorCriterio" message="tns:INarhen_ObtenerContratoPorCriterio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerContratoPorCriterioResponse" message="tns:INarhen_ObtenerContratoPorCriterio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerContrato" message="tns:INarhen_ObtenerContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerContratoResponse" message="tns:INarhen_ObtenerContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMonedaTipoCambio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarMonedaTipoCambio" message="tns:INarhen_InsertarMonedaTipoCambio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarMonedaTipoCambioResponse" message="tns:INarhen_InsertarMonedaTipoCambio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMonedaTipoCambio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarMonedaTipoCambio" message="tns:INarhen_ActualizarMonedaTipoCambio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarMonedaTipoCambioResponse" message="tns:INarhen_ActualizarMonedaTipoCambio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMonedaTipoCambio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/EliminarMonedaTipoCambio" message="tns:INarhen_EliminarMonedaTipoCambio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/EliminarMonedaTipoCambioResponse" message="tns:INarhen_EliminarMonedaTipoCambio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMonedaTipoCambio">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ObtenerMonedaTipoCambio" message="tns:INarhen_ObtenerMonedaTipoCambio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ObtenerMonedaTipoCambioResponse" message="tns:INarhen_ObtenerMonedaTipoCambio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CommandText">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/CommandText" message="tns:INarhen_CommandText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/CommandTextResponse" message="tns:INarhen_CommandText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ExecuteSQL" message="tns:INarhen_ExecuteSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ExecuteSQLResponse" message="tns:INarhen_ExecuteSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarListaError">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/InsertarListaError" message="tns:INarhen_InsertarListaError_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/InsertarListaErrorResponse" message="tns:INarhen_InsertarListaError_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarListaError">
+      <wsdl:input wsaw:Action="http://tempuri.org/INarhen/ActualizarListaError" message="tns:INarhen_ActualizarListaError_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INarhen/ActualizarListaErrorResponse" message="tns:INarhen_ActualizarListaError_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INarhen" type="tns:INarhen">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/INarhen/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/INarhen/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSocio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarSocio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSocio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarSocio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSocio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarSocio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSocioPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerSocioPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoDocumentoPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerTipoDocumentoPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVariablePorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerVariablePorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/INarhen/GetDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvincias">
+      <soap:operation soapAction="http://tempuri.org/INarhen/GetProvincias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistritos">
+      <soap:operation soapAction="http://tempuri.org/INarhen/GetDistritos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUbigeo">
+      <soap:operation soapAction="http://tempuri.org/INarhen/GetUbigeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUbigeoPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/GetUbigeoPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMoneda">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarMoneda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMoneda">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarMoneda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMoneda">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarMoneda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMonedaPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerMonedaPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarProyecto">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarProyecto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProyecto">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarProyecto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProyecto">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarProyecto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProyectoPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerProyectoPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarUnidadCatastral">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarUnidadCatastral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUnidadCatastral">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarUnidadCatastral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUnidadCatastral">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarUnidadCatastral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUnidadCatastralPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerUnidadCatastralPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarLote">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarLote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarLote">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarLote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarLote">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarLote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerLotePorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerLotePorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerLotesDisponibles">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerLotesDisponibles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSecuencia">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarSecuencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSecuencia">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarSecuencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSecuencia">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarSecuencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSecuenciaPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerSecuenciaPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarUsuario">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuario">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPassword">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerUsuarioPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorId">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerUsuarioPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarBanco">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarBanco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarBanco">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarBanco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarBanco">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarBanco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBancoPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerBancoPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarContrato">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContrato">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarContrato">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerContratoPorCriterio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerContratoPorCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerContrato">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMonedaTipoCambio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarMonedaTipoCambio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMonedaTipoCambio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarMonedaTipoCambio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMonedaTipoCambio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/EliminarMonedaTipoCambio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMonedaTipoCambio">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ObtenerMonedaTipoCambio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommandText">
+      <soap:operation soapAction="http://tempuri.org/INarhen/CommandText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQL">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarListaError">
+      <soap:operation soapAction="http://tempuri.org/INarhen/InsertarListaError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarListaError">
+      <soap:operation soapAction="http://tempuri.org/INarhen/ActualizarListaError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NarhenService">
+    <wsdl:port name="BasicHttpBinding_INarhen" binding="tns:BasicHttpBinding_INarhen">
+      <soap:address location="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

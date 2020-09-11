@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="narhen">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=vapps.dyndns-server.com;Initial Catalog=narhen</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>a07fda26-8659-4464-b984-409eb6d405fc</DataSourceID>
+</RptDataSource>

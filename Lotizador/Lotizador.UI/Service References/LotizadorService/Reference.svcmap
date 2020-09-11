@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bad8e3b4-eb0a-495e-980c-40fb202a9df1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NarhenService.xsd" MetadataType="Schema" ID="94b1761b-c2ef-4a7a-b4d8-e54a2fe3f015" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NarhenService1.xsd" MetadataType="Schema" ID="6646d20c-104b-47a6-a8ec-0837072a53c1" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NarhenService2.xsd" MetadataType="Schema" ID="77490516-00be-412e-bd0d-b5b4b76be3f1" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NarhenService3.xsd" MetadataType="Schema" ID="fc1e065d-7e55-4108-ad71-7427b41c6bf5" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NarhenService.disco" MetadataType="Disco" ID="3148cb0b-39ed-438b-bb5d-79e12dd857a7" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?disco" />
+    <MetadataFile FileName="NarhenService4.xsd" MetadataType="Schema" ID="b2aab107-b1d0-4328-8fe5-77e599545388" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd4" />
+    <MetadataFile FileName="NarhenService.wsdl" MetadataType="Wsdl" ID="a3cdcbcd-98ed-4339-9718-e6b206bfbce3" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?wsdl" />
+    <MetadataFile FileName="NarhenService5.xsd" MetadataType="Schema" ID="ad0f7f91-8302-4e4e-a381-0667e3b57958" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

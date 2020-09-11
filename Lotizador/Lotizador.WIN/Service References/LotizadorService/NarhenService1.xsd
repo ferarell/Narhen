@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Lotizador.BE" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Lotizador.BE" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SocioBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Distrito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDistrito" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProvincia" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSocio" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTipoDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUbigeo" type="xs:int" />
+      <xs:element minOccurs="0" name="Mensajeria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ocupacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenciaDireccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sexo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoDomicilio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoMovil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumentoDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoSocio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoSocioDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SocioBE" nillable="true" type="tns:SocioBE" />
+  <xs:complexType name="ArrayOfSocioBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SocioBE" nillable="true" type="tns:SocioBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSocioBE" nillable="true" type="tns:ArrayOfSocioBE" />
+  <xs:complexType name="TipoDocumentoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoTipoDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdTipoDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Valorado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoDocumentoBE" nillable="true" type="tns:TipoDocumentoBE" />
+  <xs:complexType name="ArrayOfTipoDocumentoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoDocumentoBE" nillable="true" type="tns:TipoDocumentoBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoDocumentoBE" nillable="true" type="tns:ArrayOfTipoDocumentoBE" />
+  <xs:complexType name="VariableBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdVariable" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VariableBE" nillable="true" type="tns:VariableBE" />
+  <xs:complexType name="ArrayOfVariableBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VariableBE" nillable="true" type="tns:VariableBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariableBE" nillable="true" type="tns:ArrayOfVariableBE" />
+  <xs:complexType name="ArrayOfUbigeoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UbigeoBE" nillable="true" type="tns:UbigeoBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUbigeoBE" nillable="true" type="tns:ArrayOfUbigeoBE" />
+  <xs:complexType name="UbigeoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDistrito" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProvincia" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUbigeo" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreDepartamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreDistrito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreProvincia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UbigeoBE" nillable="true" type="tns:UbigeoBE" />
+  <xs:complexType name="MonedaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoMoneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdMoneda" type="xs:short" />
+      <xs:element minOccurs="0" name="TextoImpresion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MonedaBE" nillable="true" type="tns:MonedaBE" />
+  <xs:complexType name="ArrayOfMonedaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonedaBE" nillable="true" type="tns:MonedaBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonedaBE" nillable="true" type="tns:ArrayOfMonedaBE" />
+  <xs:complexType name="ProyectoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArchivoPlantilla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Banco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CantidadLotes" type="xs:short" />
+      <xs:element minOccurs="0" name="CodigoBanco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoInterbancario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoMoneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCorriente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Distrito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdBanco" type="xs:short" />
+      <xs:element minOccurs="0" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDistrito" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMoneda" type="xs:short" />
+      <xs:element minOccurs="0" name="IdProvincia" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUbigeo" type="xs:int" />
+      <xs:element minOccurs="0" name="ImporteMora" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProyectoBE" nillable="true" type="tns:ProyectoBE" />
+  <xs:complexType name="ArrayOfProyectoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProyectoBE" nillable="true" type="tns:ProyectoBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProyectoBE" nillable="true" type="tns:ArrayOfProyectoBE" />
+  <xs:complexType name="UnidadCatastralBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUnidadCatastral" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreProyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartidaRegistral" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistroPredial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Superficie" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnidadCatastralBE" nillable="true" type="tns:UnidadCatastralBE" />
+  <xs:complexType name="ArrayOfUnidadCatastralBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnidadCatastralBE" nillable="true" type="tns:UnidadCatastralBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnidadCatastralBE" nillable="true" type="tns:ArrayOfUnidadCatastralBE" />
+  <xs:complexType name="LoteBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoMoneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdLote" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMoneda" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUnidadCatastral" type="xs:int" />
+      <xs:element minOccurs="0" name="ImporteDescuento" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImporteLote" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImporteM2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LinderoDerecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LinderoFondo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LinderoFrente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LinderoIzquierda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LongitudLinderoDerecha" type="xs:double" />
+      <xs:element minOccurs="0" name="LongitudLinderoFondo" type="xs:double" />
+      <xs:element minOccurs="0" name="LongitudLinderoFrente" type="xs:double" />
+      <xs:element minOccurs="0" name="LongitudLinderoIzquierda" type="xs:double" />
+      <xs:element minOccurs="0" name="Manzana" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreProyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Superficie" type="xs:double" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoteBE" nillable="true" type="tns:LoteBE" />
+  <xs:complexType name="ArrayOfLoteBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoteBE" nillable="true" type="tns:LoteBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoteBE" nillable="true" type="tns:ArrayOfLoteBE" />
+  <xs:complexType name="SecuenciaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdProyecto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSecuencia" type="xs:short" />
+      <xs:element minOccurs="0" name="IdTipoDocumento" type="xs:short" />
+      <xs:element minOccurs="0" name="NumeroDocumentoCorriente" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroDocumentoFinal" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroDocumentoInicial" type="xs:int" />
+      <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SerieDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecuenciaBE" nillable="true" type="tns:SecuenciaBE" />
+  <xs:complexType name="ArrayOfSecuenciaBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecuenciaBE" nillable="true" type="tns:SecuenciaBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecuenciaBE" nillable="true" type="tns:ArrayOfSecuenciaBE" />
+  <xs:complexType name="UsuarioBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FlgCambioPwd" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:short" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="LookAndFeel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsuarioBE" nillable="true" type="tns:UsuarioBE" />
+  <xs:complexType name="ArrayOfUsuarioBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsuarioBE" nillable="true" type="tns:UsuarioBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsuarioBE" nillable="true" type="tns:ArrayOfUsuarioBE" />
+  <xs:complexType name="BancoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoBanco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdBanco" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BancoBE" nillable="true" type="tns:BancoBE" />
+  <xs:complexType name="ArrayOfBancoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BancoBE" nillable="true" type="tns:BancoBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBancoBE" nillable="true" type="tns:ArrayOfBancoBE" />
+  <xs:complexType name="ContratoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoMoneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionLote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiaPago" type="xs:short" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaEmision" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdContrato" type="xs:short" />
+      <xs:element minOccurs="0" name="IdLote" type="xs:short" />
+      <xs:element minOccurs="0" name="IdMoneda" type="xs:short" />
+      <xs:element minOccurs="0" name="IdProyecto" type="xs:short" />
+      <xs:element minOccurs="0" name="ImporteInicial" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImporteTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ManzanaLote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreProyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreSocio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroCuotas" type="xs:short" />
+      <xs:element minOccurs="0" name="PrimeraCuota" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+      <xs:element minOccurs="0" name="ValorCuotas" type="xs:decimal" />
+      <xs:element minOccurs="0" name="dtSocios" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="listContratoSocioBE" nillable="true" type="tns:ArrayOfContratoSocioBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContratoBE" nillable="true" type="tns:ContratoBE" />
+  <xs:complexType name="ArrayOfContratoSocioBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContratoSocioBE" nillable="true" type="tns:ContratoSocioBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContratoSocioBE" nillable="true" type="tns:ArrayOfContratoSocioBE" />
+  <xs:complexType name="ContratoSocioBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdContrato" type="xs:short" />
+      <xs:element minOccurs="0" name="IdSocio" type="xs:short" />
+      <xs:element minOccurs="0" name="Principal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContratoSocioBE" nillable="true" type="tns:ContratoSocioBE" />
+  <xs:complexType name="ArrayOfContratoBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContratoBE" nillable="true" type="tns:ContratoBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContratoBE" nillable="true" type="tns:ArrayOfContratoBE" />
+  <xs:complexType name="MonedaTipoCambioBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoMoneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaReferencia" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdMoneda" type="xs:short" />
+      <xs:element minOccurs="0" name="TcDolarC" type="xs:double" />
+      <xs:element minOccurs="0" name="TcDolarV" type="xs:double" />
+      <xs:element minOccurs="0" name="TcLocalC" type="xs:double" />
+      <xs:element minOccurs="0" name="TcLocalV" type="xs:double" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MonedaTipoCambioBE" nillable="true" type="tns:MonedaTipoCambioBE" />
+  <xs:complexType name="ArrayOfMonedaTipoCambioBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonedaTipoCambioBE" nillable="true" type="tns:MonedaTipoCambioBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonedaTipoCambioBE" nillable="true" type="tns:ArrayOfMonedaTipoCambioBE" />
+  <xs:complexType name="GeneralBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SqlTxt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dtResult" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeneralBE" nillable="true" type="tns:GeneralBE" />
+  <xs:complexType name="ListaErrorBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Atendido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaHora" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdError" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreObjeto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ubicacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:short" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaErrorBE" nillable="true" type="tns:ListaErrorBE" />
+</xs:schema>
