@@ -1,6 +1,7 @@
 ﻿Imports Lotizador.UI.LotizadorService
 'Imports Microsoft.Reporting.WinForms
 Imports CrystalDecisions.Shared
+Imports CrystalDecisions.ReportSource
 
 Public Class frmVisorCronograma
     Dim oNarhemService As NarhenClient = New NarhenClient()

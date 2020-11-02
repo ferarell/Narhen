@@ -104,25 +104,18 @@ Partial Class frmFacturacion
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.barStaticItem3 = New DevExpress.XtraBars.BarStaticItem()
-        Me.barStaticItem4 = New DevExpress.XtraBars.BarStaticItem()
-        Me.brsEstado = New DevExpress.XtraBars.BarStaticItem()
         Me.beiProceso = New DevExpress.XtraBars.BarEditItem()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
         Me.bbiEditarPago = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiAnularFacturacion = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiAnularComprobante = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiEmitirComprobante = New DevExpress.XtraBars.BarButtonItem()
-        Me.bsiVistas = New DevExpress.XtraBars.BarSubItem()
-        Me.bbiVistaGrilla = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiTarjeta = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiRefrescar = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiCerrar = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
-        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
         Me.ucpUsuario = New Lotizador.UI.ucPanelAuditoria()
@@ -132,6 +125,11 @@ Partial Class frmFacturacion
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.lueProyecto = New DevExpress.XtraEditors.LookUpEdit()
+        Me.bbiSunat = New DevExpress.XtraBars.BarButtonItem()
+        Me.bsiEmisiones = New DevExpress.XtraBars.BarSubItem()
+        Me.bbiNotaCredito = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiEmitirFactura = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiEmitirNotaCredito = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcLetrasPendientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -862,8 +860,8 @@ Partial Class frmFacturacion
         Me.bmAcciones.DockControls.Add(Me.BarDockControl4)
         Me.bmAcciones.Form = Me
         Me.bmAcciones.Images = Me.imBarraAcciones16x16
-        Me.bmAcciones.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.barStaticItem3, Me.barStaticItem4, Me.brsEstado, Me.bbiAnularFacturacion, Me.bbiEmitirComprobante, Me.bbiCerrar, Me.beiProceso, Me.bbiEditarPago, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiRefrescar, Me.BarButtonItem2})
-        Me.bmAcciones.MaxItemId = 12
+        Me.bmAcciones.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.barStaticItem3, Me.bbiAnularComprobante, Me.bbiCerrar, Me.beiProceso, Me.bbiEditarPago, Me.bbiRefrescar, Me.BarButtonItem2, Me.bbiSunat, Me.bsiEmisiones, Me.bbiNotaCredito, Me.bbiEmitirFactura, Me.bbiEmitirNotaCredito})
+        Me.bmAcciones.MaxItemId = 43
         Me.bmAcciones.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemImageComboBox1})
         '
         'bar5
@@ -873,7 +871,7 @@ Partial Class frmFacturacion
         Me.bar5.DockCol = 0
         Me.bar5.DockRow = 0
         Me.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom
-        Me.bar5.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.brsDescripcion), New DevExpress.XtraBars.LinkPersistInfo(Me.barStaticItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.barStaticItem4), New DevExpress.XtraBars.LinkPersistInfo(Me.brsEstado), New DevExpress.XtraBars.LinkPersistInfo(Me.beiProceso)})
+        Me.bar5.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.brsDescripcion), New DevExpress.XtraBars.LinkPersistInfo(Me.barStaticItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.beiProceso)})
         Me.bar5.OptionsBar.AllowQuickCustomization = False
         Me.bar5.OptionsBar.DrawDragBorder = False
         Me.bar5.OptionsBar.MultiLine = True
@@ -890,18 +888,6 @@ Partial Class frmFacturacion
         Me.barStaticItem3.Caption = "0 / 0"
         Me.barStaticItem3.Id = 31
         Me.barStaticItem3.Name = "barStaticItem3"
-        '
-        'barStaticItem4
-        '
-        Me.barStaticItem4.Caption = "Estado"
-        Me.barStaticItem4.Id = 46
-        Me.barStaticItem4.Name = "barStaticItem4"
-        '
-        'brsEstado
-        '
-        Me.brsEstado.Caption = "Lectura"
-        Me.brsEstado.Id = 47
-        Me.brsEstado.Name = "brsEstado"
         '
         'beiProceso
         '
@@ -923,14 +909,14 @@ Partial Class frmFacturacion
         Me.brBarraAcciones.DockRow = 0
         Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
-        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEditarPago, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiAnularFacturacion, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.BarButtonItem2, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEmitirComprobante, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bsiVistas, "", True, True, False, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiRefrescar, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiCerrar, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
+        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEditarPago, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bsiEmisiones, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiAnularComprobante, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.BarButtonItem2, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiRefrescar, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiSunat, True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiCerrar, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
         '
         'bbiEditarPago
         '
-        Me.bbiEditarPago.Caption = "Editar Datos de Pago"
+        Me.bbiEditarPago.Caption = "Editar Pago"
         Me.bbiEditarPago.Enabled = False
         Me.bbiEditarPago.Id = 1
         Me.bbiEditarPago.ImageOptions.Image = CType(resources.GetObject("bbiEditarPago.ImageOptions.Image"), System.Drawing.Image)
@@ -938,59 +924,24 @@ Partial Class frmFacturacion
         Me.bbiEditarPago.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E))
         Me.bbiEditarPago.Name = "bbiEditarPago"
         '
-        'bbiAnularFacturacion
+        'bbiAnularComprobante
         '
-        Me.bbiAnularFacturacion.Caption = "Anular Facturación"
-        Me.bbiAnularFacturacion.Enabled = False
-        Me.bbiAnularFacturacion.Id = 37
-        Me.bbiAnularFacturacion.ImageOptions.Image = CType(resources.GetObject("bbiAnularFacturacion.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiAnularFacturacion.ImageOptions.ImageIndex = 4
-        Me.bbiAnularFacturacion.ImageOptions.LargeImageIndex = 5
-        Me.bbiAnularFacturacion.ItemShortcut = New DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.Delete)
-        Me.bbiAnularFacturacion.Name = "bbiAnularFacturacion"
+        Me.bbiAnularComprobante.Caption = "Anular Comprobante"
+        Me.bbiAnularComprobante.Id = 37
+        Me.bbiAnularComprobante.ImageOptions.Image = CType(resources.GetObject("bbiAnularFacturacion.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiAnularComprobante.ImageOptions.ImageIndex = 4
+        Me.bbiAnularComprobante.ImageOptions.LargeImageIndex = 5
+        Me.bbiAnularComprobante.ItemShortcut = New DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.Delete)
+        Me.bbiAnularComprobante.Name = "bbiAnularComprobante"
         '
         'BarButtonItem2
         '
-        Me.BarButtonItem2.Caption = "Reasignar Facturación"
+        Me.BarButtonItem2.Caption = "Reasignar Comprobante"
         Me.BarButtonItem2.Id = 11
         Me.BarButtonItem2.ImageOptions.Image = CType(resources.GetObject("BarButtonItem2.ImageOptions.Image"), System.Drawing.Image)
         Me.BarButtonItem2.ImageOptions.ImageIndex = 3
         Me.BarButtonItem2.Name = "BarButtonItem2"
         Me.BarButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'bbiEmitirComprobante
-        '
-        Me.bbiEmitirComprobante.Caption = "Emitir Comprobante"
-        Me.bbiEmitirComprobante.Id = 38
-        Me.bbiEmitirComprobante.ImageOptions.Image = CType(resources.GetObject("bbiEmitirComprobante.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiEmitirComprobante.ImageOptions.ImageIndex = 5
-        Me.bbiEmitirComprobante.ImageOptions.LargeImageIndex = 8
-        Me.bbiEmitirComprobante.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P))
-        Me.bbiEmitirComprobante.Name = "bbiEmitirComprobante"
-        '
-        'bsiVistas
-        '
-        Me.bsiVistas.Caption = "Vistas"
-        Me.bsiVistas.Id = 6
-        Me.bsiVistas.ImageOptions.Image = CType(resources.GetObject("bsiVistas.ImageOptions.Image"), System.Drawing.Image)
-        Me.bsiVistas.ImageOptions.ImageIndex = 20
-        Me.bsiVistas.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiVistaGrilla), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiTarjeta)})
-        Me.bsiVistas.Name = "bsiVistas"
-        Me.bsiVistas.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'bbiVistaGrilla
-        '
-        Me.bbiVistaGrilla.Caption = "Grilla"
-        Me.bbiVistaGrilla.Id = 7
-        Me.bbiVistaGrilla.ImageOptions.ImageIndex = 23
-        Me.bbiVistaGrilla.Name = "bbiVistaGrilla"
-        '
-        'bbiTarjeta
-        '
-        Me.bbiTarjeta.Caption = "Tarjeta"
-        Me.bbiTarjeta.Id = 8
-        Me.bbiTarjeta.ImageOptions.ImageIndex = 21
-        Me.bbiTarjeta.Name = "bbiTarjeta"
         '
         'bbiRefrescar
         '
@@ -1041,12 +992,6 @@ Partial Class frmFacturacion
         Me.BarDockControl4.Location = New System.Drawing.Point(972, 47)
         Me.BarDockControl4.Manager = Me.bmAcciones
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 496)
-        '
-        'BarButtonItem1
-        '
-        Me.BarButtonItem1.Caption = "Vista"
-        Me.BarButtonItem1.Id = 3
-        Me.BarButtonItem1.Name = "BarButtonItem1"
         '
         'RepositoryItemLookUpEdit1
         '
@@ -1147,6 +1092,38 @@ Partial Class frmFacturacion
         Me.lueProyecto.Size = New System.Drawing.Size(337, 20)
         Me.lueProyecto.TabIndex = 41
         '
+        'bbiSunat
+        '
+        Me.bbiSunat.Caption = "Subir Archivo"
+        Me.bbiSunat.Id = 12
+        Me.bbiSunat.Name = "bbiSunat"
+        '
+        'bsiEmisiones
+        '
+        Me.bsiEmisiones.Caption = "Emitir Comprobante"
+        Me.bsiEmisiones.Id = 38
+        Me.bsiEmisiones.ImageOptions.Image = CType(resources.GetObject("bsiEmisiones.ImageOptions.Image"), System.Drawing.Image)
+        Me.bsiEmisiones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiEmitirFactura), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiEmitirNotaCredito)})
+        Me.bsiEmisiones.Name = "bsiEmisiones"
+        '
+        'bbiNotaCredito
+        '
+        Me.bbiNotaCredito.Caption = "Nota de Crédito"
+        Me.bbiNotaCredito.Id = 40
+        Me.bbiNotaCredito.Name = "bbiNotaCredito"
+        '
+        'bbiEmitirFactura
+        '
+        Me.bbiEmitirFactura.Caption = "Emitir Boleta / Factura"
+        Me.bbiEmitirFactura.Id = 41
+        Me.bbiEmitirFactura.Name = "bbiEmitirFactura"
+        '
+        'bbiEmitirNotaCredito
+        '
+        Me.bbiEmitirNotaCredito.Caption = "Emitir Nota de Crédito"
+        Me.bbiEmitirNotaCredito.Id = 42
+        Me.bbiEmitirNotaCredito.Name = "bbiEmitirNotaCredito"
+        '
         'frmFacturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1194,23 +1171,16 @@ Partial Class frmFacturacion
     Private WithEvents bar5 As DevExpress.XtraBars.Bar
     Private WithEvents brsDescripcion As DevExpress.XtraBars.BarStaticItem
     Private WithEvents barStaticItem3 As DevExpress.XtraBars.BarStaticItem
-    Private WithEvents barStaticItem4 As DevExpress.XtraBars.BarStaticItem
-    Private WithEvents brsEstado As DevExpress.XtraBars.BarStaticItem
     Private WithEvents beiProceso As DevExpress.XtraBars.BarEditItem
     Private WithEvents rpiProceso As DevExpress.XtraEditors.Repository.RepositoryItemProgressBar
     Private WithEvents brBarraAcciones As DevExpress.XtraBars.Bar
     Private WithEvents bbiEditarPago As DevExpress.XtraBars.BarButtonItem
-    Private WithEvents bbiAnularFacturacion As DevExpress.XtraBars.BarButtonItem
-    Private WithEvents bbiEmitirComprobante As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents bsiVistas As DevExpress.XtraBars.BarSubItem
-    Friend WithEvents bbiVistaGrilla As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents bbiTarjeta As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents bbiAnularComprobante As DevExpress.XtraBars.BarButtonItem
     Private WithEvents bbiCerrar As DevExpress.XtraBars.BarButtonItem
     Private WithEvents BarDockControl1 As DevExpress.XtraBars.BarDockControl
     Private WithEvents BarDockControl2 As DevExpress.XtraBars.BarDockControl
     Private WithEvents BarDockControl3 As DevExpress.XtraBars.BarDockControl
     Private WithEvents BarDockControl4 As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents RepositoryItemImageComboBox1 As DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox
     Friend WithEvents ucpUsuario As Lotizador.UI.ucPanelAuditoria
@@ -1299,4 +1269,9 @@ Partial Class frmFacturacion
     Friend WithEvents SplitContainerControl2 As DevExpress.XtraEditors.SplitContainerControl
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lueProyecto As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents bbiSunat As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bsiEmisiones As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents bbiNotaCredito As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiEmitirFactura As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiEmitirNotaCredito As DevExpress.XtraBars.BarButtonItem
 End Class

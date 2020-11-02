@@ -22,14 +22,14 @@
     <MetadataSource Address="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NarhenService.xsd" MetadataType="Schema" ID="94b1761b-c2ef-4a7a-b4d8-e54a2fe3f015" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd2" />
-    <MetadataFile FileName="NarhenService1.xsd" MetadataType="Schema" ID="6646d20c-104b-47a6-a8ec-0837072a53c1" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd3" />
-    <MetadataFile FileName="NarhenService2.xsd" MetadataType="Schema" ID="77490516-00be-412e-bd0d-b5b4b76be3f1" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd0" />
-    <MetadataFile FileName="NarhenService3.xsd" MetadataType="Schema" ID="fc1e065d-7e55-4108-ad71-7427b41c6bf5" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd1" />
-    <MetadataFile FileName="NarhenService.disco" MetadataType="Disco" ID="3148cb0b-39ed-438b-bb5d-79e12dd857a7" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?disco" />
-    <MetadataFile FileName="NarhenService4.xsd" MetadataType="Schema" ID="b2aab107-b1d0-4328-8fe5-77e599545388" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd4" />
-    <MetadataFile FileName="NarhenService.wsdl" MetadataType="Wsdl" ID="a3cdcbcd-98ed-4339-9718-e6b206bfbce3" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?wsdl" />
-    <MetadataFile FileName="NarhenService5.xsd" MetadataType="Schema" ID="ad0f7f91-8302-4e4e-a381-0667e3b57958" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd5" />
+    <MetadataFile FileName="NarhenService.xsd" MetadataType="Schema" ID="1e302b2c-d230-4036-b21b-b8ece7f881c8" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NarhenService1.xsd" MetadataType="Schema" ID="a06f3a9f-5a54-4005-8ed7-ac5a7b8440e4" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NarhenService2.xsd" MetadataType="Schema" ID="d5c1fade-53d7-453e-972d-80340a01ce53" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NarhenService3.xsd" MetadataType="Schema" ID="9adeb620-dff3-4b58-a83f-f08e9deb348f" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NarhenService.disco" MetadataType="Disco" ID="c9b33ee2-aec3-49a2-86dd-83da1466ce65" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?disco" />
+    <MetadataFile FileName="NarhenService4.xsd" MetadataType="Schema" ID="4c4e615e-6ee3-4ba4-8693-3e08dc0c7c89" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd4" />
+    <MetadataFile FileName="NarhenService.wsdl" MetadataType="Wsdl" ID="21d856e4-1866-404a-85e5-3d36ec5a9862" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?wsdl" />
+    <MetadataFile FileName="NarhenService5.xsd" MetadataType="Schema" ID="d1a4e9aa-d119-4f32-aef5-72b3b1e8f61d" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2450/wcf/NarhenService.svc?xsd=xsd5" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

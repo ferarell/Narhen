@@ -18,69 +18,6 @@ Namespace LotizadorService
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="CompositeType", [Namespace]:="http://schemas.datacontract.org/2004/07/Lotizador.WCF"),  _
-     System.SerializableAttribute()>  _
-    Partial Public Class CompositeType
-        Inherits Object
-        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-        
-        <System.NonSerializedAttribute()>  _
-        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private BoolValueField As Boolean
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private StringValueField As String
-        
-        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
-        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
-            Get
-                Return Me.extensionDataField
-            End Get
-            Set
-                Me.extensionDataField = value
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property BoolValue() As Boolean
-            Get
-                Return Me.BoolValueField
-            End Get
-            Set
-                If (Me.BoolValueField.Equals(value) <> true) Then
-                    Me.BoolValueField = value
-                    Me.RaisePropertyChanged("BoolValue")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property StringValue() As String
-            Get
-                Return Me.StringValueField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.StringValueField, value) <> true) Then
-                    Me.StringValueField = value
-                    Me.RaisePropertyChanged("StringValue")
-                End If
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="SocioBE", [Namespace]:="http://schemas.datacontract.org/2004/07/Lotizador.BE"),  _
      System.SerializableAttribute()>  _
     Partial Public Class SocioBE
@@ -4010,10 +3947,10 @@ Namespace LotizadorService
         Function GetDataAsync(ByVal value As Integer) As System.Threading.Tasks.Task(Of String)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/INarhen/GetDataUsingDataContract", ReplyAction:="http://tempuri.org/INarhen/GetDataUsingDataContractResponse")>  _
-        Function GetDataUsingDataContract(ByVal composite As LotizadorService.CompositeType) As LotizadorService.CompositeType
+        Function GetDataUsingDataContract(ByVal composite As Lotizador.WIN.LotizadorService.CompositeType) As Lotizador.WIN.LotizadorService.CompositeType
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/INarhen/GetDataUsingDataContract", ReplyAction:="http://tempuri.org/INarhen/GetDataUsingDataContractResponse")>  _
-        Function GetDataUsingDataContractAsync(ByVal composite As LotizadorService.CompositeType) As System.Threading.Tasks.Task(Of LotizadorService.CompositeType)
+        Function GetDataUsingDataContractAsync(ByVal composite As Lotizador.WIN.LotizadorService.CompositeType) As System.Threading.Tasks.Task(Of Lotizador.WIN.LotizadorService.CompositeType)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/INarhen/InsertarSocio", ReplyAction:="http://tempuri.org/INarhen/InsertarSocioResponse")>  _
         Function InsertarSocio(ByVal oSocioBE As LotizadorService.SocioBE) As Boolean
@@ -4385,11 +4322,11 @@ Namespace LotizadorService
             Return MyBase.Channel.GetDataAsync(value)
         End Function
         
-        Public Function GetDataUsingDataContract(ByVal composite As LotizadorService.CompositeType) As LotizadorService.CompositeType Implements LotizadorService.INarhen.GetDataUsingDataContract
+        Public Function GetDataUsingDataContract(ByVal composite As Lotizador.WIN.LotizadorService.CompositeType) As Lotizador.WIN.LotizadorService.CompositeType Implements LotizadorService.INarhen.GetDataUsingDataContract
             Return MyBase.Channel.GetDataUsingDataContract(composite)
         End Function
         
-        Public Function GetDataUsingDataContractAsync(ByVal composite As LotizadorService.CompositeType) As System.Threading.Tasks.Task(Of LotizadorService.CompositeType) Implements LotizadorService.INarhen.GetDataUsingDataContractAsync
+        Public Function GetDataUsingDataContractAsync(ByVal composite As Lotizador.WIN.LotizadorService.CompositeType) As System.Threading.Tasks.Task(Of Lotizador.WIN.LotizadorService.CompositeType) Implements LotizadorService.INarhen.GetDataUsingDataContractAsync
             Return MyBase.Channel.GetDataUsingDataContractAsync(composite)
         End Function
         

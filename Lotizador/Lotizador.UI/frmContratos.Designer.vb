@@ -85,6 +85,7 @@ Partial Class frmContratos
         Me.bbiCronograma = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiLetras = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiCartaNotarial = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiActualizar = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiCerrar = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiPrimero = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiAnterior = New DevExpress.XtraBars.BarButtonItem()
@@ -101,7 +102,9 @@ Partial Class frmContratos
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
         Me.ucpUsuario = New Lotizador.UI.ucPanelAuditoria()
-        Me.bbiActualizar = New DevExpress.XtraBars.BarButtonItem()
+        Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
+        Me.lueProyecto = New DevExpress.XtraEditors.LookUpEdit()
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcContratos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +112,9 @@ Partial Class frmContratos
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainerControl1.SuspendLayout()
+        CType(Me.lueProyecto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CardView1
@@ -270,10 +276,10 @@ Partial Class frmContratos
         GridLevelNode1.LevelTemplate = Me.CardView1
         GridLevelNode1.RelationName = "Level1"
         Me.gcContratos.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
-        Me.gcContratos.Location = New System.Drawing.Point(0, 47)
+        Me.gcContratos.Location = New System.Drawing.Point(0, 0)
         Me.gcContratos.MainView = Me.GridView1
         Me.gcContratos.Name = "gcContratos"
-        Me.gcContratos.Size = New System.Drawing.Size(1014, 270)
+        Me.gcContratos.Size = New System.Drawing.Size(1014, 281)
         Me.gcContratos.TabIndex = 165
         Me.gcContratos.UseEmbeddedNavigator = True
         Me.gcContratos.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.CardView1})
@@ -642,6 +648,13 @@ Partial Class frmContratos
         Me.bbiCartaNotarial.Id = 15
         Me.bbiCartaNotarial.Name = "bbiCartaNotarial"
         '
+        'bbiActualizar
+        '
+        Me.bbiActualizar.Caption = "Actualizar"
+        Me.bbiActualizar.Id = 20
+        Me.bbiActualizar.ImageOptions.Image = CType(resources.GetObject("bbiActualizar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiActualizar.Name = "bbiActualizar"
+        '
         'bbiCerrar
         '
         Me.bbiCerrar.Caption = "Cerrar"
@@ -699,7 +712,7 @@ Partial Class frmContratos
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 354)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 410)
         Me.BarDockControl2.Manager = Me.bmAcciones
         Me.BarDockControl2.Size = New System.Drawing.Size(1014, 29)
         '
@@ -709,7 +722,7 @@ Partial Class frmContratos
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
         Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmAcciones
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 307)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 363)
         '
         'BarDockControl4
         '
@@ -717,7 +730,7 @@ Partial Class frmContratos
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
         Me.BarDockControl4.Location = New System.Drawing.Point(1014, 47)
         Me.BarDockControl4.Manager = Me.bmAcciones
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 307)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 363)
         '
         'BarButtonItem1
         '
@@ -764,26 +777,54 @@ Partial Class frmContratos
         Me.ucpUsuario.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ucpUsuario.FechaCreacion = New Date(CType(0, Long))
         Me.ucpUsuario.FechaModificacion = New Date(CType(0, Long))
-        Me.ucpUsuario.Location = New System.Drawing.Point(0, 317)
+        Me.ucpUsuario.Location = New System.Drawing.Point(0, 373)
         Me.ucpUsuario.Name = "ucpUsuario"
         Me.ucpUsuario.Size = New System.Drawing.Size(1014, 37)
         Me.ucpUsuario.TabIndex = 180
         Me.ucpUsuario.UsuarioCreacion = Nothing
         Me.ucpUsuario.UsuarioModificacion = Nothing
         '
-        'bbiActualizar
+        'SplitContainerControl1
         '
-        Me.bbiActualizar.Caption = "Actualizar"
-        Me.bbiActualizar.Id = 20
-        Me.bbiActualizar.ImageOptions.Image = CType(resources.GetObject("bbiActualizar.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiActualizar.Name = "bbiActualizar"
+        Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
+        Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl1.Horizontal = False
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
+        Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.[Default]
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl8)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.lueProyecto)
+        Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcContratos)
+        Me.SplitContainerControl1.Panel2.Text = "Panel2"
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1014, 326)
+        Me.SplitContainerControl1.SplitterPosition = 40
+        Me.SplitContainerControl1.TabIndex = 185
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Location = New System.Drawing.Point(36, 11)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(43, 13)
+        Me.LabelControl8.TabIndex = 44
+        Me.LabelControl8.Text = "Proyecto"
+        '
+        'lueProyecto
+        '
+        Me.lueProyecto.Location = New System.Drawing.Point(98, 8)
+        Me.lueProyecto.Name = "lueProyecto"
+        Me.lueProyecto.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.lueProyecto.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdBanco", "IdBanco", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.lueProyecto.Properties.NullText = "Seleccione"
+        Me.lueProyecto.Size = New System.Drawing.Size(337, 20)
+        Me.lueProyecto.TabIndex = 43
         '
         'frmContratos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1014, 383)
-        Me.Controls.Add(Me.gcContratos)
+        Me.ClientSize = New System.Drawing.Size(1014, 439)
+        Me.Controls.Add(Me.SplitContainerControl1)
         Me.Controls.Add(Me.ucpUsuario)
         Me.Controls.Add(Me.BarDockControl3)
         Me.Controls.Add(Me.BarDockControl4)
@@ -799,6 +840,9 @@ Partial Class frmContratos
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainerControl1.ResumeLayout(False)
+        CType(Me.lueProyecto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -883,4 +927,7 @@ Partial Class frmContratos
     Friend WithEvents GridColumn39 As DevExpress.XtraGrid.Columns.GridColumn
     Private WithEvents imBarraAcciones16x16 As System.Windows.Forms.ImageList
     Friend WithEvents bbiActualizar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
+    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lueProyecto As DevExpress.XtraEditors.LookUpEdit
 End Class

@@ -10,11 +10,7 @@ Public Class frmContratos
     Dim oGeneralBE As New GeneralBE
 
     Private Sub bbiCronograma_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiCronograma.ItemClick
-        If gcContratos.MainView.Name = "GridView1" Then
-            oContratoBE = GridView1.GetFocusedRow
-        Else
-            oContratoBE = CardView1.GetFocusedRow
-        End If
+        oContratoBE = GetContratoBE()
         If Not fnExisteLetras() Then
             Dim Message As String = "No existen Letras asociadas al Contrato, desea crearlas?"
             If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, Message, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -39,11 +35,7 @@ Public Class frmContratos
 
     Function fnExisteTipoCambio(ByVal FechaEmision As Date) As Boolean
         Dim bResult As Boolean = True
-        If gcContratos.MainView.Name = "GridView1" Then
-            oContratoBE = GridView1.GetFocusedRow
-        Else
-            oContratoBE = CardView1.GetFocusedRow
-        End If
+        oContratoBE = GetContratoBE()
         oGeneralBE.SqlTxt = "SELECT * FROM MonedaTipoCambio WHERE FechaReferencia = '" & Format(oContratoBE.FechaEmision, "yyyy-MM-dd") & "'"
         oGeneralBE = oNarhemService.CommandText(oGeneralBE)
         If oGeneralBE.dtResult.Rows.Count = 0 Then
@@ -53,11 +45,7 @@ Public Class frmContratos
     End Function
 
     Private Sub bbiContrato_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiContrato.ItemClick
-        If gcContratos.MainView.Name = "GridView1" Then
-            oContratoBE = GridView1.GetFocusedRow
-        Else
-            oContratoBE = CardView1.GetFocusedRow
-        End If
+        oContratoBE = GetContratoBE()
         If oContratoBE.CodigoMoneda = "USD" Then
             Dim dFechaEmision As Date = oContratoBE.FechaEmision
             If Not fnExisteTipoCambio(dFechaEmision) Then
@@ -96,46 +84,71 @@ Public Class frmContratos
     End Sub
 
     Public Sub PoblarGrillaContratos()
-        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-        SplashScreenManager.Default.SetWaitFormDescription("Consultando datos")
+        'SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        'SplashScreenManager.Default.SetWaitFormDescription("Consultando datos")
         Try
-            Dim oContratoBE As ContratoBE = New ContratoBE()
-            Dim listContratos As List(Of ContratoBE) = New List(Of ContratoBE)(oNarhemService.ObtenerContratoPorCriterio(oContratoBE))
-            Me.gcContratos.DataSource = listContratos
-            oView = gcContratos.MainView.SourceRow
+            SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+            SplashScreenManager.Default.SetWaitFormDescription("Consultando datos")
+            Dim oGeneralBE As New GeneralBE
+            oGeneralBE.SqlTxt = "EXEC upObtenerContratosPorProyecto " & lueProyecto.EditValue.ToString
+            oGeneralBE = oNarhemService.CommandText(oGeneralBE)
+            Me.gcContratos.DataSource = oGeneralBE.dtResult
         Catch ex As Exception
             SplashScreenManager.CloseForm(False)
+            'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             SplashScreenManager.CloseForm(False)
         End Try
     End Sub
 
     Private Sub frmContratos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        PoblarProyectos()
     End Sub
 
+    Private Sub PoblarProyectos()
+        Dim oProyectoBE As ProyectoBE = New ProyectoBE()
+        Dim listProyectos As List(Of ProyectoBE) = New List(Of ProyectoBE)(oNarhemService.ObtenerProyectoPorCriterio(oProyectoBE))
+        Me.lueProyecto.Properties.DataSource = listProyectos
+        Me.lueProyecto.Properties.DisplayMember = "Descripcion"
+        Me.lueProyecto.Properties.ValueMember = "IdProyecto"
+    End Sub
     Private Sub bbiEditar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEditar.ItemClick
-        Dim oContratoBE As ContratoBE
-        If gcContratos.MainView.Name = "GridView1" Then
-            oContratoBE = GridView1.GetFocusedRow
-        Else
-            oContratoBE = CardView1.GetFocusedRow
-        End If
         Dim oFormDialog As frmPopupContratos = New frmPopupContratos()
-        oFormDialog.oContratoBEEdit = oContratoBE
+        oFormDialog.oContratoBEEdit = GetContratoBE()
         If oFormDialog.ShowDialog() = DialogResult.OK Then
             DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Grabado Satisfactoriamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
             PoblarGrillaContratos()
         End If
     End Sub
 
+    Function GetContratoBE() As ContratoBE
+        Dim oContratoBE As New ContratoBE
+        Dim dr = GridView1.GetFocusedDataRow
+        oContratoBE.IdContrato = dr("IdContrato")
+        oContratoBE.IdLote = dr("IdLote")
+        oContratoBE.IdProyecto = dr("IdProyecto")
+        oContratoBE.FechaEmision = dr("FechaEmision")
+        oContratoBE.NumeroCuotas = dr("NumeroCuotas")
+        oContratoBE.ValorCuotas = dr("ValorCuotas")
+        oContratoBE.FechaInicio = dr("FechaInicio")
+        oContratoBE.DiaPago = dr("DiaPago")
+        oContratoBE.IdMoneda = dr("IdMoneda")
+        oContratoBE.CodigoMoneda = dr("CodigoMoneda")
+        oContratoBE.DescripcionLote = dr("DescripcionLote")
+        oContratoBE.ImporteTotal = dr("ImporteTotal")
+        oContratoBE.ImporteInicial = dr("ImporteInicial")
+        oContratoBE.PrimeraCuota = dr("PrimeraCuota")
+        oContratoBE.UsuarioCreacion = dr("UsuarioCreacion")
+        oContratoBE.FechaCreacion = dr("FechaCreacion")
+        oContratoBE.UsuarioModificacion = dr("UsuarioModificacion")
+        oContratoBE.FechaModificacion = dr("FechaModificacion")
+        oContratoBE.dtSocios = Nothing
+        Return oContratoBE
+    End Function
+
     Private Sub bbiEliminar_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEliminar.ItemClick
         Dim oContratoBE As ContratoBE
-        If Me.gcContratos.MainView.Name = "GridView1" Then
-            oContratoBE = GridView1.GetFocusedRow
-        Else
-            oContratoBE = CardView1.GetFocusedRow
-        End If
+        oContratoBE = GetContratoBE()
         If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Desea eliminar este registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             If oNarhemService.EliminarContrato(oContratoBE) Then
                 DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Eliminacion Satisfactoria", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -150,11 +163,7 @@ Public Class frmContratos
 
 
     Private Sub bbiLetras_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiLetras.ItemClick
-        If gcContratos.MainView.Name = "GridView1" Then
-            oContratoBE = GridView1.GetFocusedRow
-        Else
-            oContratoBE = CardView1.GetFocusedRow
-        End If
+        oContratoBE = GetContratoBE()
         If Not fnExisteLetras() Then
             Dim Message As String = "No existen Letras asociadas al Contrato, desea crearlas?"
             If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, Message, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -330,12 +339,12 @@ Public Class frmContratos
     End Function
 
     Private Sub GridView1_FocusedRowChanged(sender As System.Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
-        Dim dgrItem As ContratoBE = CType(GridView1.GetRow(e.FocusedRowHandle), ContratoBE)
+        Dim dgrItem As DataRow = GridView1.GetFocusedDataRow
         If Not dgrItem Is Nothing Then
-            ucpUsuario.FechaCreacion = dgrItem.FechaCreacion
-            ucpUsuario.FechaModificacion = dgrItem.FechaModificacion
-            ucpUsuario.UsuarioCreacion = General.ObtenerUsuario(dgrItem.UsuarioCreacion).Cuenta
-            ucpUsuario.UsuarioModificacion = General.ObtenerUsuario(dgrItem.UsuarioModificacion).Cuenta
+            ucpUsuario.FechaCreacion = dgrItem("FechaCreacion")
+            ucpUsuario.FechaModificacion = dgrItem("FechaModificacion")
+            ucpUsuario.UsuarioCreacion = General.ObtenerUsuario(dgrItem("UsuarioCreacion")).Cuenta
+            ucpUsuario.UsuarioModificacion = General.ObtenerUsuario(dgrItem("UsuarioModificacion")).Cuenta
             ucpUsuario.pnlAuditoria.Refresh()
         End If
 
@@ -372,11 +381,7 @@ Public Class frmContratos
 
     Function fnExisteLetras() As Boolean
         Dim bResult As Boolean = True
-        If gcContratos.MainView.Name = "GridView1" Then
-            oContratoBE = GridView1.GetFocusedRow
-        Else
-            oContratoBE = CardView1.GetFocusedRow
-        End If
+        oContratoBE = GetContratoBE()
         oGeneralBE.SqlTxt = "SELECT TOP 1 ISNULL(IdDocumentoContable,0) IdDocumentoContable FROM Letra WHERE IdContrato = " & oContratoBE.IdContrato.ToString & " order by IdLetra"
         oGeneralBE = oNarhemService.CommandText(oGeneralBE)
         If oGeneralBE.dtResult.Rows.Count = 0 Then
@@ -392,10 +397,16 @@ Public Class frmContratos
     End Sub
 
     Private Sub frmContratos_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        bbiActualizar.PerformClick()
+        'bbiActualizar.PerformClick()
     End Sub
 
     Private Sub bbiActualizar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiActualizar.ItemClick
         PoblarGrillaContratos()
+    End Sub
+
+    Private Sub lueProyecto_Properties_EditValueChanged(sender As Object, e As EventArgs) Handles lueProyecto.Properties.EditValueChanged
+        If lueProyecto.ItemIndex >= 0 Then
+            PoblarGrillaContratos()
+        End If
     End Sub
 End Class

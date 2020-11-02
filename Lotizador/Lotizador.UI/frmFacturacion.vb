@@ -46,7 +46,7 @@ Public Class frmFacturacion
         End If
     End Sub
 
-    Private Sub bbiImprimir_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEmitirComprobante.ItemClick
+    Private Sub bbiImprimir_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs)
         Dim myPopup As New frmPopupFacturacion
         myPopup.myGridView1 = GridView1
         If myPopup.ContarSeleccionados = 0 Then
@@ -102,16 +102,16 @@ Public Class frmFacturacion
 
 
     Private Sub gcLetrasPendientes_Enter(sender As System.Object, e As System.EventArgs) Handles gcLetrasPendientes.Enter
-        bbiAnularFacturacion.Enabled = False
+        bbiAnularComprobante.Enabled = False
         bbiEditarPago.Enabled = False
     End Sub
 
     Private Sub gcLetrasPagadas_Enter(sender As System.Object, e As System.EventArgs) Handles gcLetrasPagadas.Enter
-        bbiAnularFacturacion.Enabled = True
+        bbiAnularComprobante.Enabled = True
         bbiEditarPago.Enabled = True
     End Sub
 
-    Private Sub bbiAnularFacturacion_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiAnularFacturacion.ItemClick
+    Private Sub bbiAnularFacturacion_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiAnularComprobante.ItemClick
         Dim msg As String = "Esta seguro de anular el documento " & GridView2.GetRowCellValue(GridView2.GetFocusedDataSourceRowIndex, "NumeroSunat") & "?"
         If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, msg, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             'If MsgBox(msg, MsgBoxStyle.YesNo, "Confirmación") = MsgBoxResult.Yes Then
@@ -190,5 +190,13 @@ Public Class frmFacturacion
         If lueProyecto.ItemIndex >= 0 Then
             PoblarGrillaLetrasPendientes()
         End If
+    End Sub
+
+    Private Sub bbiEmitirNotaCredito_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEmitirNotaCredito.ItemClick
+
+    End Sub
+
+    Private Sub bbiEmitirFactura_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEmitirFactura.ItemClick
+
     End Sub
 End Class

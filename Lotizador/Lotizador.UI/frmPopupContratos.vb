@@ -32,6 +32,10 @@ Public Class frmPopupContratos
     End Sub
 
     Private Sub PoblarSocios()
+        Dim oGeneralBE As New GeneralBE
+        oGeneralBE.SqlTxt = "EXEC upObtenerSociosPorContrato " & _ContratoBE.IdContrato.ToString
+        oGeneralBE = oNarhemService.CommandText(oGeneralBE)
+        oContratoBEEdit.dtSocios = oGeneralBE.dtResult
         oContratoBEEdit.dtSocios.Columns("Nombres").ReadOnly = False
         Me.gcSocios.DataSource = oContratoBEEdit.dtSocios
     End Sub
