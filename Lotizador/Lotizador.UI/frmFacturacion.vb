@@ -199,4 +199,18 @@ Public Class frmFacturacion
     Private Sub bbiEmitirFactura_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEmitirFactura.ItemClick
 
     End Sub
+
+    Private Sub bsiEmisiones_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bsiEmisiones.ItemClick
+        Dim myPopup As New frmPopupFacturacion
+        myPopup.myGridView1 = GridView1
+        If myPopup.ContarSeleccionados = 0 Then
+            DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Debe seleccionar al menos 1 letra pendiente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MsgBox("Debe seleccionar al menos 1 letra pendiente.", MsgBoxStyle.Critical)
+            myPopup.Close()
+            Return
+        End If
+        If myPopup.ShowDialog() <> DialogResult.Cancel Then
+            PoblarGrillaLetrasPendientes()
+        End If
+    End Sub
 End Class

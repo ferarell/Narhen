@@ -49,6 +49,7 @@ Public Class frmEstadoCuenta
     End Sub
 
     Private Sub sbVerReporte_Click(sender As System.Object, e As System.EventArgs) Handles sbVerReporte.Click
+        Validate()
         If Not vpReportInputs.Validate() Then
             sender.Focus()
             Return
@@ -65,7 +66,7 @@ Public Class frmEstadoCuenta
             crvEstadoCuenta.LogOnInfo.Item(0).ConnectionInfo.AllowCustomConnection = True
             'Asignación de Parámetro
             ParamArrayList.Add(Me.lueLote.Properties.GetDataSourceValue("IdContrato", lueLote.ItemIndex).ToString())
-            ParamArrayList.Add(0)
+            ParamArrayList.Add(ToggleSwitch1.EditValue)
             SetCurrentValuesForParameterField(myParameterFields, ParamArrayList)
             crvEstadoCuenta.Show()
         Catch ex As Exception

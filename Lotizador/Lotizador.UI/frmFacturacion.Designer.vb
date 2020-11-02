@@ -108,14 +108,19 @@ Partial Class frmFacturacion
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
         Me.bbiEditarPago = New DevExpress.XtraBars.BarButtonItem()
+        Me.bsiEmisiones = New DevExpress.XtraBars.BarSubItem()
+        Me.bbiEmitirFactura = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiEmitirNotaCredito = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiAnularComprobante = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiRefrescar = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiSunat = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiCerrar = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
+        Me.bbiNotaCredito = New DevExpress.XtraBars.BarButtonItem()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
         Me.ucpUsuario = New Lotizador.UI.ucPanelAuditoria()
@@ -125,11 +130,6 @@ Partial Class frmFacturacion
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.lueProyecto = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bbiSunat = New DevExpress.XtraBars.BarButtonItem()
-        Me.bsiEmisiones = New DevExpress.XtraBars.BarSubItem()
-        Me.bbiNotaCredito = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiEmitirFactura = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiEmitirNotaCredito = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcLetrasPendientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -924,11 +924,33 @@ Partial Class frmFacturacion
         Me.bbiEditarPago.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E))
         Me.bbiEditarPago.Name = "bbiEditarPago"
         '
+        'bsiEmisiones
+        '
+        Me.bsiEmisiones.Caption = "Emitir Comprobante"
+        Me.bsiEmisiones.Id = 38
+        Me.bsiEmisiones.ImageOptions.Image = CType(resources.GetObject("bsiEmisiones.ImageOptions.Image"), System.Drawing.Image)
+        Me.bsiEmisiones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiEmitirFactura), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiEmitirNotaCredito)})
+        Me.bsiEmisiones.Name = "bsiEmisiones"
+        '
+        'bbiEmitirFactura
+        '
+        Me.bbiEmitirFactura.Caption = "Emitir Boleta / Factura"
+        Me.bbiEmitirFactura.Id = 41
+        Me.bbiEmitirFactura.Name = "bbiEmitirFactura"
+        Me.bbiEmitirFactura.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'bbiEmitirNotaCredito
+        '
+        Me.bbiEmitirNotaCredito.Caption = "Emitir Nota de Crédito"
+        Me.bbiEmitirNotaCredito.Id = 42
+        Me.bbiEmitirNotaCredito.Name = "bbiEmitirNotaCredito"
+        Me.bbiEmitirNotaCredito.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
         'bbiAnularComprobante
         '
         Me.bbiAnularComprobante.Caption = "Anular Comprobante"
         Me.bbiAnularComprobante.Id = 37
-        Me.bbiAnularComprobante.ImageOptions.Image = CType(resources.GetObject("bbiAnularFacturacion.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiAnularComprobante.ImageOptions.Image = CType(resources.GetObject("bbiAnularComprobante.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiAnularComprobante.ImageOptions.ImageIndex = 4
         Me.bbiAnularComprobante.ImageOptions.LargeImageIndex = 5
         Me.bbiAnularComprobante.ItemShortcut = New DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.Delete)
@@ -950,6 +972,13 @@ Partial Class frmFacturacion
         Me.bbiRefrescar.ImageOptions.Image = CType(resources.GetObject("bbiRefrescar.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiRefrescar.ImageOptions.ImageIndex = 24
         Me.bbiRefrescar.Name = "bbiRefrescar"
+        '
+        'bbiSunat
+        '
+        Me.bbiSunat.Caption = "Subir Archivo"
+        Me.bbiSunat.Id = 12
+        Me.bbiSunat.Name = "bbiSunat"
+        Me.bbiSunat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'bbiCerrar
         '
@@ -992,6 +1021,12 @@ Partial Class frmFacturacion
         Me.BarDockControl4.Location = New System.Drawing.Point(972, 47)
         Me.BarDockControl4.Manager = Me.bmAcciones
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 496)
+        '
+        'bbiNotaCredito
+        '
+        Me.bbiNotaCredito.Caption = "Nota de Crédito"
+        Me.bbiNotaCredito.Id = 40
+        Me.bbiNotaCredito.Name = "bbiNotaCredito"
         '
         'RepositoryItemLookUpEdit1
         '
@@ -1091,38 +1126,6 @@ Partial Class frmFacturacion
         Me.lueProyecto.Properties.NullText = "Seleccione"
         Me.lueProyecto.Size = New System.Drawing.Size(337, 20)
         Me.lueProyecto.TabIndex = 41
-        '
-        'bbiSunat
-        '
-        Me.bbiSunat.Caption = "Subir Archivo"
-        Me.bbiSunat.Id = 12
-        Me.bbiSunat.Name = "bbiSunat"
-        '
-        'bsiEmisiones
-        '
-        Me.bsiEmisiones.Caption = "Emitir Comprobante"
-        Me.bsiEmisiones.Id = 38
-        Me.bsiEmisiones.ImageOptions.Image = CType(resources.GetObject("bsiEmisiones.ImageOptions.Image"), System.Drawing.Image)
-        Me.bsiEmisiones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiEmitirFactura), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiEmitirNotaCredito)})
-        Me.bsiEmisiones.Name = "bsiEmisiones"
-        '
-        'bbiNotaCredito
-        '
-        Me.bbiNotaCredito.Caption = "Nota de Crédito"
-        Me.bbiNotaCredito.Id = 40
-        Me.bbiNotaCredito.Name = "bbiNotaCredito"
-        '
-        'bbiEmitirFactura
-        '
-        Me.bbiEmitirFactura.Caption = "Emitir Boleta / Factura"
-        Me.bbiEmitirFactura.Id = 41
-        Me.bbiEmitirFactura.Name = "bbiEmitirFactura"
-        '
-        'bbiEmitirNotaCredito
-        '
-        Me.bbiEmitirNotaCredito.Caption = "Emitir Nota de Crédito"
-        Me.bbiEmitirNotaCredito.Id = 42
-        Me.bbiEmitirNotaCredito.Name = "bbiEmitirNotaCredito"
         '
         'frmFacturacion
         '

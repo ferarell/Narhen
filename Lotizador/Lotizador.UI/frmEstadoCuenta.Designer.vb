@@ -29,11 +29,13 @@ Partial Class frmEstadoCuenta
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.lueLote = New DevExpress.XtraEditors.LookUpEdit()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.sbVerReporte = New DevExpress.XtraEditors.SimpleButton()
         Me.crvEstadoCuenta = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.EstadoCuentaContrato1 = New Lotizador.UI.EstadoCuentaContrato()
         Me.GalleryControlGallery1 = New DevExpress.XtraBars.Ribbon.Gallery.GalleryControlGallery()
         Me.vpReportInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.sbVerReporte = New DevExpress.XtraEditors.SimpleButton()
+        Me.ToggleSwitch1 = New DevExpress.XtraEditors.ToggleSwitch()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +46,7 @@ Partial Class frmEstadoCuenta
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.vpReportInputs, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ToggleSwitch1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -59,7 +62,7 @@ Partial Class frmEstadoCuenta
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.crvEstadoCuenta)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(949, 440)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1091, 440)
         Me.SplitContainerControl1.SplitterPosition = 61
         Me.SplitContainerControl1.TabIndex = 1
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
@@ -67,16 +70,18 @@ Partial Class frmEstadoCuenta
         'PanelControl2
         '
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.PanelControl2.Controls.Add(Me.ToggleSwitch1)
         Me.PanelControl2.Controls.Add(Me.LabelControl8)
         Me.PanelControl2.Controls.Add(Me.lueProyecto)
         Me.PanelControl2.Controls.Add(Me.lueCliente)
         Me.PanelControl2.Controls.Add(Me.lblCliente)
+        Me.PanelControl2.Controls.Add(Me.LabelControl2)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
         Me.PanelControl2.Controls.Add(Me.lueLote)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl2.Location = New System.Drawing.Point(0, 0)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(836, 61)
+        Me.PanelControl2.Size = New System.Drawing.Size(978, 61)
         Me.PanelControl2.TabIndex = 9
         '
         'LabelControl8
@@ -99,7 +104,7 @@ Partial Class frmEstadoCuenta
         '
         'lueCliente
         '
-        Me.lueCliente.Location = New System.Drawing.Point(331, 10)
+        Me.lueCliente.Location = New System.Drawing.Point(322, 10)
         Me.lueCliente.Name = "lueCliente"
         Me.lueCliente.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueCliente.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Cliente", "Cliente"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdSocio", "IdSocio", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
@@ -109,7 +114,7 @@ Partial Class frmEstadoCuenta
         '
         'lblCliente
         '
-        Me.lblCliente.Location = New System.Drawing.Point(292, 13)
+        Me.lblCliente.Location = New System.Drawing.Point(283, 13)
         Me.lblCliente.Name = "lblCliente"
         Me.lblCliente.Size = New System.Drawing.Size(33, 13)
         Me.lblCliente.TabIndex = 3
@@ -117,7 +122,7 @@ Partial Class frmEstadoCuenta
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(693, 13)
+        Me.LabelControl1.Location = New System.Drawing.Point(674, 13)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(21, 13)
         Me.LabelControl1.TabIndex = 3
@@ -125,7 +130,7 @@ Partial Class frmEstadoCuenta
         '
         'lueLote
         '
-        Me.lueLote.Location = New System.Drawing.Point(720, 10)
+        Me.lueLote.Location = New System.Drawing.Point(701, 10)
         Me.lueLote.Name = "lueLote"
         Me.lueLote.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLote.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ManzanaLote", "Lote"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdContrato", "IdContrato", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
@@ -138,28 +143,11 @@ Partial Class frmEstadoCuenta
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.PanelControl1.Controls.Add(Me.sbVerReporte)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl1.Location = New System.Drawing.Point(836, 0)
+        Me.PanelControl1.Location = New System.Drawing.Point(978, 0)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
         Me.PanelControl1.Size = New System.Drawing.Size(109, 61)
         Me.PanelControl1.TabIndex = 8
-        '
-        'crvEstadoCuenta
-        '
-        Me.crvEstadoCuenta.ActiveViewIndex = -1
-        Me.crvEstadoCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.crvEstadoCuenta.Cursor = System.Windows.Forms.Cursors.Default
-        Me.crvEstadoCuenta.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.crvEstadoCuenta.Location = New System.Drawing.Point(0, 0)
-        Me.crvEstadoCuenta.Name = "crvEstadoCuenta"
-        Me.crvEstadoCuenta.ShowGroupTreeButton = False
-        Me.crvEstadoCuenta.Size = New System.Drawing.Size(945, 370)
-        Me.crvEstadoCuenta.TabIndex = 0
-        Me.crvEstadoCuenta.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
-        '
-        'vpReportInputs
-        '
-        Me.vpReportInputs.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual
         '
         'sbVerReporte
         '
@@ -170,11 +158,46 @@ Partial Class frmEstadoCuenta
         Me.sbVerReporte.TabIndex = 0
         Me.sbVerReporte.Text = "Ver Reporte"
         '
+        'crvEstadoCuenta
+        '
+        Me.crvEstadoCuenta.ActiveViewIndex = -1
+        Me.crvEstadoCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.crvEstadoCuenta.Cursor = System.Windows.Forms.Cursors.Default
+        Me.crvEstadoCuenta.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.crvEstadoCuenta.Location = New System.Drawing.Point(0, 0)
+        Me.crvEstadoCuenta.Name = "crvEstadoCuenta"
+        Me.crvEstadoCuenta.ShowGroupTreeButton = False
+        Me.crvEstadoCuenta.Size = New System.Drawing.Size(1087, 370)
+        Me.crvEstadoCuenta.TabIndex = 0
+        Me.crvEstadoCuenta.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        '
+        'vpReportInputs
+        '
+        Me.vpReportInputs.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual
+        '
+        'ToggleSwitch1
+        '
+        Me.ToggleSwitch1.EditValue = True
+        Me.ToggleSwitch1.Location = New System.Drawing.Point(859, 8)
+        Me.ToggleSwitch1.Name = "ToggleSwitch1"
+        Me.ToggleSwitch1.Properties.OffText = "No"
+        Me.ToggleSwitch1.Properties.OnText = "Si"
+        Me.ToggleSwitch1.Size = New System.Drawing.Size(95, 24)
+        Me.ToggleSwitch1.TabIndex = 43
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Location = New System.Drawing.Point(791, 13)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(62, 13)
+        Me.LabelControl2.TabIndex = 3
+        Me.LabelControl2.Text = "Incluye Mora"
+        '
         'frmEstadoCuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(949, 440)
+        Me.ClientSize = New System.Drawing.Size(1091, 440)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.Name = "frmEstadoCuenta"
         Me.Text = "Estado de Cuenta"
@@ -189,6 +212,7 @@ Partial Class frmEstadoCuenta
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.vpReportInputs, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ToggleSwitch1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -206,4 +230,6 @@ Partial Class frmEstadoCuenta
     Friend WithEvents lueProyecto As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents vpReportInputs As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
     Friend WithEvents sbVerReporte As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents ToggleSwitch1 As DevExpress.XtraEditors.ToggleSwitch
+    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
 End Class
